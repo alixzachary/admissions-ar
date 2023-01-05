@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url("https://use.typekit.net/lhn7nyl.css");
+
 :not(:defined) > * {
   display: none;
 }
@@ -107,4 +110,23 @@ model-viewer[ar-status="session-started"] > #ar-prompt {
 
 model-viewer > #ar-prompt > img {
   animation: circle 4s linear infinite;
+}
+
+.overlay {
+  background: #ba0c2f;
+  width: 500px;
+  bottom: 10px;
+  left: 10px;
+  position: relative;
+  box-shadow: 0 2px 2px 0 rgb(60 64 67 / 16%);
+}
+
+.overlay > * {
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    width: 100%;
+  }
 }
