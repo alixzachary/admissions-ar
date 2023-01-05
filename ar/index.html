@@ -14,13 +14,14 @@
 <body>
 
   <!-- <model-viewer> HTML element -->
-  <model-viewer src="NeilArmstrong.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls
-    shadow-intensity="1" skybox-image="stadium.hdr">
+  <model-viewer src="NeilArmstrong.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls shadow-intensity="1"
+    skybox-image="stadium.hdr">
     <div class="progress-bar hide" slot="progress-bar">
       <div class="update-bar"></div>
     </div>
     <div class="overlay">
-      <div class="dialog_close" title="Close Instructions" onclick="$('.overlay').remove();" style="top: 5px; right: 5px;"></div>
+      <div class="dialog_close" title="Close Instructions" onclick="$('.overlay').remove();"
+        style="top: 5px; right: 5px;"></div>
       <h1>Congratulations<span class="name"></span>!</h1>
       Charlie Cardinal congratulates you on your offer of admission! Tap the button below to place Charlie
       in your room to take a picture with him.
@@ -34,16 +35,16 @@
   </model-viewer>
   <script src="script.js"></script>
   <script>
-  //Get's student name from URL parameter
-    $(document).ready(function() {
+    //Get's student name from URL parameter
+    $(document).ready(function () {
       var queryString = window.location.search;
       var urlParams = new URLSearchParams(queryString);
-      console.log(urlParams);
       var person = urlParams.get('p');
-      console.log(person)
-      $(".overlay .name").html(", " + person)
+      if (person) {
+        $(".overlay .name").html(", " + person);
+      }
     });
-    </script>
+  </script>
   <!-- Loads <model-viewer> for browsers: -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </body>
