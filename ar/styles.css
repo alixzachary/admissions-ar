@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 @import url("https://use.typekit.net/lhn7nyl.css");
 
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
 :not(:defined) > * {
   display: none;
 }
@@ -137,6 +133,7 @@ model-viewer #ar-prompt > img {
   font-family: 'Open Sans', Arial, sans-serif;
   color: #fff;
   box-shadow: 0 2px 2px 0 rgb(60 64 67 / 16%);
+  box-sizing: border-box;
 }
 
 .overlay > * {
@@ -148,5 +145,6 @@ model-viewer #ar-prompt > img {
 @media (max-width: 768px) {
   .overlay {
     width: 100%;
+    margin: 0px;
   }
 }
