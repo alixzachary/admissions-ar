@@ -126,7 +126,8 @@ model-viewer #ar-prompt > img {
 
 .overlay {
   background: #ba0c2f;
-  position: relative;
+  position: absolute;
+  bottom: 60px;
   width: 500px;
   padding: 20px;
   margin: 20px;
