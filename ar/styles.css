@@ -97,9 +97,14 @@ model-viewer {
 }
 
 model-viewer > #ar-prompt {
+  /*
   position: absolute;
   left: 50%;
   bottom: 60px;
+  */
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
   animation: elongate 2s infinite ease-in-out alternate;
   display: none;
 }
@@ -117,12 +122,16 @@ model-viewer > #ar-prompt > img {
   width: 500px;
   bottom: 10px;
   left: 10px;
+  padding: 10px;
   position: relative;
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: #fff;
   box-shadow: 0 2px 2px 0 rgb(60 64 67 / 16%);
 }
 
 .overlay > * {
   font-family: 'Open Sans', Arial, sans-serif;
+  color: #fff;
 }
 
 @media (max-width: 768px) {
