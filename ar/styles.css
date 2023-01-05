@@ -127,10 +127,7 @@ model-viewer #ar-prompt > img {
 .overlay {
   background: #ba0c2f;
   width: 500px;
-  bottom: 10px;
-  left: 10px;
   padding: 20px;
-  position: absolute;
   font-family: 'Open Sans', Arial, sans-serif;
   color: #fff;
   box-shadow: 0 2px 2px 0 rgb(60 64 67 / 16%);
