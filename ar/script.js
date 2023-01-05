@@ -13,3 +13,11 @@ const onProgress = (event) => {
   }
 };
 document.querySelector('model-viewer').addEventListener('progress', onProgress);
+
+//Get's student name from URL parameter
+$(document).ready(function() {
+	var queryString = window.location.search;
+	var urlParams = new URLSearchParams(queryString);
+	var person = urlParams.get('p');
+	$(".overlay .name").val(", " + person)
+});
