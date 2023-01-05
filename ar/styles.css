@@ -131,6 +131,7 @@ model-viewer #ar-prompt > img {
 .overlay > * {
   font-family: 'Open Sans', Arial, sans-serif;
   color: #fff;
+  margin: 0px;
 }
 
 @media (max-width: 768px) {
