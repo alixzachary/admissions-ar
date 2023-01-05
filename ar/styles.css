@@ -145,8 +145,7 @@ model-viewer #ar-prompt > img {
 
 @media (max-width: 768px) {
   .overlay {
-    width: 100%;
-    margin: 0px;
+    width: 90%;
     bottom: 60px;
   }
 }
