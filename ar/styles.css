@@ -129,6 +129,7 @@ model-viewer #ar-prompt > img {
   position: relative;
   width: 500px;
   padding: 20px;
+  margin: 20px;
   font-family: 'Open Sans', Arial, sans-serif;
   color: #fff;
   box-shadow: 0 2px 2px 0 rgb(60 64 67 / 16%);
