@@ -59,8 +59,7 @@
     };
 
     const onVisible = (event) => {
-      console.log(event.detail.visible);
-      if (event.detail.visible === true) {
+      if (event.detail.visible) {
         progressBar.classList.add('hide');
 
         var end = Date.now() + (15 * 1000);
