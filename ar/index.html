@@ -84,7 +84,35 @@
       };
     };
     const onVisible = (event) => {
-      console.log("event.detail.visible: " + event.detail.visible);
+      if (event.detail.visible === true) {
+        progressBar.classList.add('hide');
+
+        var end = Date.now() + (15 * 1000);
+
+        // go Ball State!
+        var colors = ['#ba0c2f', '#ffffff'];
+
+        (function frame() {
+          confetti({
+            particleCount: 2,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: colors
+          });
+          confetti({
+            particleCount: 2,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: colors
+          });
+
+          if (Date.now() < end) {
+            requestAnimationFrame(frame);
+          }
+        }());
+      }
     }
     document.querySelector('model-viewer').addEventListener('progress', onProgress);
     document.querySelector('model-viewer').addEventListener('model-visibility', onVisible);
