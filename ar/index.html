@@ -13,34 +13,6 @@
 </head>
 
 <body>
-  <script>
-    var end = Date.now() + (15 * 1000);
-
-    // go Ball State!
-    var colors = ['#ba0c2f', '#ffffff'];
-
-    (function frame() {
-      confetti({
-        particleCount: 2,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 },
-        colors: colors
-      });
-      confetti({
-        particleCount: 2,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1 },
-        colors: colors
-      });
-
-      if (Date.now() < end) {
-        requestAnimationFrame(frame);
-      }
-    }());
-  </script>
-  <!-- <model-viewer> HTML element -->
   <model-viewer src="NeilArmstrong.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls shadow-intensity="1"
     skybox-image="stadium.hdr">
     <div class="progress-bar hide" slot="progress-bar">
@@ -71,6 +43,48 @@
         $(".overlay .name").html(", " + person);
       }
     });
+
+    // Handles loading the events for <model-viewer>'s slotted progress bar
+    const onProgress = (event) => {
+      const progressBar = event.target.querySelector('.progress-bar');
+      const updatingBar = event.target.querySelector('.update-bar');
+      updatingBar.style.width = `${event.detail.totalProgress * 100}%`;
+      if (event.detail.totalProgress === 1) {
+        progressBar.classList.add('hide');
+
+        var end = Date.now() + (15 * 1000);
+
+        // go Ball State!
+        var colors = ['#ba0c2f', '#ffffff'];
+
+        (function frame() {
+          confetti({
+            particleCount: 2,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: colors
+          });
+          confetti({
+            particleCount: 2,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: colors
+          });
+
+          if (Date.now() < end) {
+            requestAnimationFrame(frame);
+          }
+        }());
+      } else {
+        progressBar.classList.remove('hide');
+        if (event.detail.totalProgress === 0) {
+          event.target.querySelector('.center-pre-prompt').classList.add('hide');
+        }
+      }
+    };
+    document.querySelector('model-viewer').addEventListener('progress', onProgress);
   </script>
   <!-- Loads <model-viewer> for browsers: -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
