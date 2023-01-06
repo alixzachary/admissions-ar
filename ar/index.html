@@ -84,6 +84,7 @@
       };
     };
     const onVisible = (event) => {
+      console.log(event.detail.visible);
       if (event.detail.visible === true) {
         progressBar.classList.add('hide');
 
