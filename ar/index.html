@@ -83,12 +83,11 @@
         }
       };
     };
-    const onLoad = (event) => {
-      console.log("event.detail" + event.detail);
-      console.log("event.load" + event.load);
+    const onVisible = (event) => {
+      console.log("event.detail.visible: " + event.detail.visible);
     }
     document.querySelector('model-viewer').addEventListener('progress', onProgress);
-    document.querySelector('model-viewer').addEventListener('load', onLoad);
+    document.querySelector('model-viewer').addEventListener('model-visibility', onVisible);
   </script>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </body>
