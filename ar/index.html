@@ -50,7 +50,6 @@
       updatingBar.style.width = `${event.detail.totalProgress * 100}%`;
       if (event.detail.totalProgress === 1) {
         progressBar.classList.add('hide');
-        console.log(event.detail)
 
         var end = Date.now() + (15 * 1000);
 
@@ -84,6 +83,10 @@
         }
       };
     };
+    const onLoad = (event) => {
+      console.log("event.detail" + event.detail);
+      console.log("event.load" + event.load);
+    }
     document.querySelector('model-viewer').addEventListener('progress', onProgress);
     document.querySelector('model-viewer').addEventListener('load', onLoad);
   </script>
